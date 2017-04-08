@@ -4,7 +4,9 @@
 
 This was the first Graphical User Interface based game that I created.
 It was for a college presentation, during my 1st year, Undergraduate at PESIT.
+
 Started: March 24th, 2017
+
 Finished: April 9th, 2017  (Had a lot of assignment work and my internal tests were going on)
 
 
