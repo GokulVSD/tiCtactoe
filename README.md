@@ -113,4 +113,5 @@ on windows made me waste a good 5 days of trying a lot of things.
 
 
 Command for compiling using GCC (GTK+ 3.0 Libraries must be installed first):
+
 gcc -o TicTacToe main.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic
