@@ -1,5 +1,5 @@
-                              ﻿Tic Tac Toe
-                                    -by Gokul Vasudeva
+                              ﻿   Tic Tac Toe
+                                      -by Gokul Vasudeva
 
 
 This was the first Graphical User Interface based game that I created.
