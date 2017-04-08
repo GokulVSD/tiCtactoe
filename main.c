@@ -3,6 +3,8 @@
 /* all code was written by Gokul Vasudeva, with no help
 from any external source, whatsoever */
 
+/* Uploaded to https://github.com/GokulVSD/tictactoe/
+
 // function prototyping
 int hasAnyoneWon(int a[3][3]);
 void setAllButtonsToBlank();
