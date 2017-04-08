@@ -98,20 +98,6 @@ Implementing the PvC mode within the already created code took a lot of time and
 and required me to fix a lot of bugs that arose with calling the computerMove() function after Player’s move.
 
 
-Several days were spent in trying to compile my glade file and .c file into a
-windows EXE file, but to no avail, several hours of googling and installing
-libraries of several gigabytes in size went to waste. This was because on Linux,
-mingw simply refused to compile my program because the documented way of linking
-GTK lib during compiling just refused to work.
-So when I switched to windows, compiled by re downloading all the libraries,
-and and trying to compile using MSYS2 (The framework used by GTK on windows),
-I realised that GTK 3.0 was the latest library available for windows, the version
-I was using on Linux was GTK 3.12, so when I tried compiling, some functions
-of the game were broken. I ditched the idea of trying to compile for windows,
-and decided to showcase the game on Linux. This ordeal of trying to compile
-on windows made me waste a good 5 days of trying a lot of things.
-
-
 Command for compiling using GCC (GTK+ 3.0 Libraries must be installed first):
 
 gcc -o TicTacToe main.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic
