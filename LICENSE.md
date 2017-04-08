@@ -1,5 +1,8 @@
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
+I, Gokul Vasudeva hereby grant any user free reign to copy my code or parts
+of my code in the game Tic Tac Toe into any project as desired, without my
+my prior consent. Credits would be appreciated but are not mandatory.
 
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
