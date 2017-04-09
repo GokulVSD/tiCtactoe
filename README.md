@@ -13,34 +13,34 @@ Finished: April 9th, 2017  (Had a lot of assignment work and my internal tests w
 This was my first foray into GTK and creating an application in C.
 I learnt GTK from the ground up, and I’d received rudimentary knowledge in C from my 1st Semester.
 Spent a lot of time deciding what Library to use.
-After choosing GTK, tried coding all the widgets by hand; realised it's
-too time consuming, so switched to Glade, a GTK UI widget handler, produces XML files.
+After choosing GTK, I tried coding all the widgets by hand; realised it's
+too time consuming, so I switched to Glade, a GTK UI widget handler, which produces XML files.
 Took a while to figure out how to use the XML file to create the
 main widget.
-Took a while to figure out how to link call back signals to functions
+Took a while to figure out how to link call back signals to functions.
 Button linking wasn't working because I kept linking the “Activate” signal, instead of the
 “Clicked” signal. (This was due to lack of proper documentation for Glade).
 Learned to debug by sending messages to terminal via g_print().
 Fixed aspect ratio of certain widgets.
-Took a while in getting the close/credit/licence buttons in the About dialog to work.
+Took a while to get the close/credit/licence buttons in the About dialog to work.
 This was because they were created as a container widget, so sending individual
 callback signals was not possible. Because of this, I had to read a lot of
 documentation based on dialogs and response signals, and realised that
 running the dialog instead of showing it was far more ergenomic;
 the dialog automatically responds to the response signal which was predefined in the close button,
-so that problem was solved. Took a very long time to figure that one.
+which solved the problem. Took a very long time to figure that one out.
 
 
-Next I set up the difficulty selection menu, I tried very hard to terminate the
+Next I set up the difficulty selection menu, I tried to terminate the
 widget after selecting the difficulty, but the widget wouldn't terminate.
 Same thing with buttons, I needed to change their text to either ‘X’ or ‘O’ or ‘ ‘
 And it simply wasn't working, because when I tried initializing all the widgets
-in order for me to perform actions on them, they created new widgets instead of
-linking to the ones in the Glade XML file. I spent several days in overcoming
-this hurdle, spent several hours going through Google to try to find some
-documentation for the functions I was using, but GTK is primarily used with
-Python, so almost all the documentation was only referencing Python, which is
-object oriented, so that was useless.
+and creating a reference to them in order for me to perform actions on them, 
+they created new widgets instead of linking to the ones in the Glade XML file.
+I spent several days in overcoming his hurdle, spent several hours going through 
+Google to try to find some documentation for the functions I was using, but GTK
+is primarily used with Python, so almost all the documentation was only referencing Python,
+which is oject oriented, so that was useless.
 
 
 After exhausting every avenue, I gave up and proceeded to try and generate
@@ -92,7 +92,7 @@ where in every button needs to be pressed to send its respective user data in or
 This was a very tedious process because I had to modify a lot of code.
 
 
-Created a Computer AI based on a scoring system. If difficulty is hard,
+Created an AI based on a scoring system. If difficulty is hard,
 the highest scored move is played, if medium, second highest scored move is played, if easy,
 third highest scored move is played. The scoring system worked off of several criteria,
 and scores were adjusted for certain edge cases.
