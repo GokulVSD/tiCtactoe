@@ -1,9 +1,7 @@
 #include <gtk/gtk.h>
 
-/* all code was written by Gokul Vasudeva, with no help
-from any external source, whatsoever */
-
-/* Uploaded to https://github.com/GokulVSD/tictactoe/ */
+/* all code in master branch was written by Gokul Vasudeva
+Uploaded to https://github.com/GokulVSD/tictactoe/ */
 
 // function prototyping
 int hasAnyoneWon(int a[3][3]);
@@ -233,7 +231,7 @@ int on_button11_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[0][0]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -249,13 +247,10 @@ int on_button11_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -269,10 +264,8 @@ int on_button11_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -304,7 +297,7 @@ int on_button12_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[0][1]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -320,13 +313,10 @@ int on_button12_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -340,10 +330,8 @@ int on_button12_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -375,7 +363,7 @@ int on_button13_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[0][2]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -391,13 +379,10 @@ int on_button13_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -411,10 +396,8 @@ int on_button13_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -446,7 +429,7 @@ int on_button21_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[1][0]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -462,13 +445,10 @@ int on_button21_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -482,10 +462,8 @@ int on_button21_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -517,7 +495,7 @@ int on_button22_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[1][1]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -533,13 +511,10 @@ int on_button22_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -553,10 +528,8 @@ int on_button22_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -588,7 +561,7 @@ int on_button23_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[1][2]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -604,13 +577,10 @@ int on_button23_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -624,10 +594,8 @@ int on_button23_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -659,7 +627,7 @@ int on_button31_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[2][0]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -675,13 +643,10 @@ int on_button31_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -695,10 +660,8 @@ int on_button31_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -730,7 +693,7 @@ int on_button32_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[2][1]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -746,13 +709,10 @@ int on_button32_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -766,10 +726,8 @@ int on_button32_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
@@ -801,7 +759,7 @@ int on_button33_clicked(GtkWidget *click_button, gpointer   user_data)
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[2][2]) return 0;
 
-  // runs when when button is pressed in-game
+  // runs when button is pressed in-game
   if(flag&&gameNotOver)
   {
     // runs when the button is pressed during an odd move
@@ -817,13 +775,10 @@ int on_button33_clicked(GtkWidget *click_button, gpointer   user_data)
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
                 }
-                break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 2'S MOVE");
       if(gameType==1) computerMove();
@@ -837,10 +792,8 @@ int on_button33_clicked(GtkWidget *click_button, gpointer   user_data)
       {
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
-                break;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
                 gameNotOver=0; return 0;
-                break;
       }
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
     }
