@@ -1,5 +1,8 @@
 #include <gtk/gtk.h>
 
+// Add images for the menu items
+// Update readme files and reduce it's size
+// Fix medium difficulty and easy difficulty
 // modify the way restart works
 // initialise the variables only once, even if PvP
 // modify glade code and remove unecessary user_data thats being passed
