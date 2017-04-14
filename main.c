@@ -1,5 +1,13 @@
 #include <gtk/gtk.h>
 
+// modify the way restart works
+// initialise the variables only once, even if PvP
+// modify glade code and remove unecessary user_data thats being passed
+// add octaves when buttons are clicked
+// modify text colors for stuff
+// modify the X and O's to be bigger fonts size
+// use more code inheritance when buttons are being pressed
+
 /* all code in master branch was written by Gokul Vasudeva
 Uploaded to https://github.com/GokulVSD/tictactoe/ */
 
