@@ -169,7 +169,7 @@ void on_restartGame_activate(GtkWidget *click_button, gpointer   user_data)
       for(j=0;j<3;j++)
       {
           button[i][j]=NULL;
-          arr[i][j]=NULL;
+          arr[i][j]=0;
           pressed[i][j]=0;
       }
   }
@@ -923,7 +923,7 @@ void computerMove()
 
 void initialising(GtkButton *buttonInit,int i,int j)
 {
-    if(button11C!=NULL) return 0;
+    if(button[i][j]!=NULL) return;
     button[i][j]=buttonInit;
     gtk_button_set_label(button[i][j], "OK");
     if(++initialise==10)
