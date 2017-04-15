@@ -163,7 +163,8 @@ void on_hardButton_clicked(GtkWidget *click_button, gpointer   user_data)
 void on_restartGame_activate(GtkWidget *click_button, gpointer   user_data)
 {
   int i,j;
-  gameDifficulty=0; gameType=0; flag=0; moveCounter=0; gameNotOver=1; initialise=0; statusFlag=0;
+  if(!statusFlag) return;
+  gameDifficulty=0; gameType=0; flag=0; moveCounter=0; gameNotOver=1; initialise=0;
   for(i=0;i<3;i++)
   {
       for(j=0;j<3;j++)
