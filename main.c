@@ -221,7 +221,7 @@ int on_button11_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -279,7 +279,7 @@ int on_button12_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -337,7 +337,7 @@ int on_button13_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -395,7 +395,7 @@ int on_button21_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -453,7 +453,7 @@ int on_button22_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -511,7 +511,7 @@ int on_button23_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -569,7 +569,7 @@ int on_button31_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -627,7 +627,7 @@ int on_button32_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
@@ -685,7 +685,7 @@ int on_button33_clicked(GtkWidget *click_button, gpointer   user_data)
                 {
                   gtk_button_set_label(statusClick, "DRAW");
                   gameNotOver=0; return 0;
-                }
+                } break;
         case 1: gtk_button_set_label(statusClick, "PLAYER 1 WON");
                 gameNotOver=0; return 0;
         case 2: gtk_button_set_label(statusClick, "PLAYER 2 WON");
