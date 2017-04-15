@@ -16,21 +16,14 @@
 Uploaded to https://github.com/GokulVSD/tictactoe/ */
 
 // function prototyping
+void initialising(GtkButton *buttonInit,int i,int j);
 int hasAnyoneWon(int a[3][3]);
 void setAllButtonsToBlank();
 void computerMove();
 
 // declaring global variables
 static GtkButton *statusClick;
-static GtkButton *button11C=NULL;
-static GtkButton *button12C=NULL;
-static GtkButton *button13C=NULL;
-static GtkButton *button21C=NULL;
-static GtkButton *button22C=NULL;
-static GtkButton *button23C=NULL;
-static GtkButton *button31C=NULL;
-static GtkButton *button32C=NULL;
-static GtkButton *button33C=NULL;
+static GtkButton *button[3][3]={{NULL,NULL,NULL},{NULL,NULL,NULL},{NULL,NULL,NULL}};
 
 // declaring global flags
 static int flag=0, gameNotOver=1, initialise=0, statusFlag=0, pressed[3][3]={{0,0,0},{0,0,0},{0,0,0}};
@@ -144,27 +137,24 @@ int on_pVc_activate()
 // runs when easy is selected in difficulty selection dialog
 void on_easyButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
-  GtkWidget *diffDialog = (GtkWidget *) user_data;
   gameDifficulty = 0;
-  gtk_widget_destroy(diffDialog);
+  gtk_widget_destroy((GtkWidget *) user_data);
   gtk_button_set_label(statusClick, "PRESS ALL BUTTONS TO INITIALISE");
 }
 
 // runs when medium is selected in difficulty selection dialog
 void on_mediumButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
-  GtkWidget *diffDialog = (GtkWidget *) user_data;
   gameDifficulty = 1;
-  gtk_widget_destroy(diffDialog);
+  gtk_widget_destroy((GtkWidget *) user_data);
   gtk_button_set_label(statusClick, "PRESS ALL BUTTONS TO INITIALISE");
 }
 
 // runs when hard is selected in difficulty selection dialog
 void on_hardButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
-  GtkWidget *diffDialog = (GtkWidget *) user_data;
   gameDifficulty = 2;
-  gtk_widget_destroy(diffDialog);
+  gtk_widget_destroy((GtkWidget *) user_data);
   gtk_button_set_label(statusClick, "PRESS ALL BUTTONS TO INITIALISE");
 }
 
@@ -172,37 +162,18 @@ void on_hardButton_clicked(GtkWidget *click_button, gpointer   user_data)
  reinitialises all global variables and runs main method */
 void on_restartGame_activate(GtkWidget *click_button, gpointer   user_data)
 {
+  int i,j;
   gameDifficulty=0; gameType=0; flag=0; moveCounter=0; gameNotOver=1; initialise=0; statusFlag=0;
-  button11C=NULL;
-  button12C=NULL;
-  button13C=NULL;
-  button21C=NULL;
-  button22C=NULL;
-  button23C=NULL;
-  button31C=NULL;
-  button32C=NULL;
-  button33C=NULL;
-  arr[0][0]=0;
-  arr[0][1]=0;
-  arr[0][2]=0;
-  arr[1][0]=0;
-  arr[1][1]=0;
-  arr[1][2]=0;
-  arr[2][0]=0;
-  arr[2][1]=0;
-  arr[2][2]=0;
-  pressed[0][0]=0;
-  pressed[0][1]=0;
-  pressed[0][2]=0;
-  pressed[1][0]=0;
-  pressed[1][1]=0;
-  pressed[1][2]=0;
-  pressed[2][0]=0;
-  pressed[2][1]=0;
-  pressed[2][2]=0;
-  GtkWidget *mainWindow = (GtkWidget *) user_data;
-  gtk_widget_destroy(mainWindow);
-  main(0,NULL);
+  for(i=0;i<3;i++)
+  {
+      for(j=0;j<3;j++)
+      {
+          button[i][j]=NULL;
+          arr[i][j]=NULL;
+          pressed[i][j]=0;
+      }
+  }
+  setAllButtonsToBlank();
 }
 
 // runs when status button is clicked, used to pass a reference of the status button
@@ -225,18 +196,10 @@ int on_button11_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button11C!=NULL) return 0;
-    button11C=buttonTemp;
-    gtk_button_set_label(button11C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
+    initialising(buttonTemp,0,0);
     return 0;
   }
 
@@ -291,18 +254,10 @@ int on_button12_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button12C!=NULL) return 0;
-    button12C=buttonTemp;
-    gtk_button_set_label(button12C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
+    initialising(buttonTemp,0,1);
     return 0;
   }
 
@@ -357,18 +312,10 @@ int on_button13_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button13C!=NULL) return 0;
-    button13C=buttonTemp;
-    gtk_button_set_label(button13C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
+    initialising(buttonTemp,0,2);
     return 0;
   }
 
@@ -423,18 +370,10 @@ int on_button21_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button21C!=NULL) return 0;
-    button21C=buttonTemp;
-    gtk_button_set_label(button21C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
+    initialising(buttonTemp,1,0);
     return 0;
   }
 
@@ -489,18 +428,10 @@ int on_button22_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button22C!=NULL) return 0;
-    button22C=buttonTemp;
-    gtk_button_set_label(button22C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
+    initialising(buttonTemp,1,1);
     return 0;
   }
 
@@ -555,18 +486,10 @@ int on_button23_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button23C!=NULL) return 0;
-    button23C=buttonTemp;
-    gtk_button_set_label(button23C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
+    initialising(buttonTemp,1,2);
     return 0;
   }
 
@@ -621,18 +544,10 @@ int on_button31_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button31C!=NULL) return 0;
-    button31C=buttonTemp;
-    gtk_button_set_label(button31C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
+    initialising(buttonTemp,2,0);
     return 0;
   }
 
@@ -687,19 +602,11 @@ int on_button32_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
+  // runs if in initialising mode
   if(initialise!=0)
   {
-    if(button32C!=NULL) return 0;
-    button32C=buttonTemp;
-    gtk_button_set_label(button32C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
-    return 0;
+      initialising(buttonTemp,2,1);
+      return 0;
   }
 
   // runs if button has already been pressed either while Initialising or in-game
@@ -753,21 +660,13 @@ int on_button33_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
-  // runs if in initialising mode for PvC
-  if(initialise!=0)
+  // runs if in initialising mode
+  if(initialise!=0) 
   {
-    if(button33C!=NULL) return 0;
-    button33C=buttonTemp;
-    gtk_button_set_label(button33C, "OK");
-    if(++initialise==10)
-    {
-      initialise=0;
-      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-      setAllButtonsToBlank();
-    }
-    return 0;
+      initialising(buttonTemp,2,2);
+      return 0;
   }
-
+      
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[2][2]) return 0;
 
@@ -862,15 +761,14 @@ int hasAnyoneWon(int a[3][3])
 // called after initialising mode is completed to reset buttons
 void setAllButtonsToBlank()
 {
-  gtk_button_set_label(button11C, " ");
-  gtk_button_set_label(button12C, " ");
-  gtk_button_set_label(button13C, " ");
-  gtk_button_set_label(button21C, " ");
-  gtk_button_set_label(button22C, " ");
-  gtk_button_set_label(button23C, " ");
-  gtk_button_set_label(button31C, " ");
-  gtk_button_set_label(button32C, " ");
-  gtk_button_set_label(button33C, " ");
+    int i,j;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            gtk_button_set_label(button[i][j], " ");
+        }
+    }
 }
 
 /* called when it's the computers move. The logic works in such way as to rank
@@ -1008,15 +906,7 @@ void computerMove()
   // plays the chosen button
   arr[x][y]=2;
   pressed[x][y]=1;
-  if(x==0&&y==0) gtk_button_set_label(button11C, "O");
-  if(x==0&&y==1) gtk_button_set_label(button12C, "O");
-  if(x==0&&y==2) gtk_button_set_label(button13C, "O");
-  if(x==1&&y==0) gtk_button_set_label(button21C, "O");
-  if(x==1&&y==1) gtk_button_set_label(button22C, "O");
-  if(x==1&&y==2) gtk_button_set_label(button23C, "O");
-  if(x==2&&y==0) gtk_button_set_label(button31C, "O");
-  if(x==2&&y==1) gtk_button_set_label(button32C, "O");
-  if(x==2&&y==2) gtk_button_set_label(button33C, "O");
+  gtk_button_set_label(button[x][y], "O");
   gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
 
   // checks to see if anyone won
@@ -1029,4 +919,17 @@ void computerMove()
             gameNotOver=0;
             break;
   }
+}
+
+void initialising(GtkButton *buttonInit,int i,int j)
+{
+    if(button11C!=NULL) return 0;
+    button[i][j]=buttonInit;
+    gtk_button_set_label(button[i][j], "OK");
+    if(++initialise==10)
+    {
+      initialise=0;
+      gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
+      setAllButtonsToBlank();
+    }
 }
