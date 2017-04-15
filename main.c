@@ -1,5 +1,6 @@
 #include <gtk/gtk.h>
 
+// Remove the necessity to press the status button on restart
 // Add images for the menu items
 // Update readme files and reduce it's size
 // Fix medium difficulty and easy difficulty
