@@ -1,9 +1,9 @@
 #include <gtk/gtk.h>
+#include <stdlib.h>
 
 // Remove the necessity to press the status button on restart
 // Add images for the menu items
 // Update readme files and reduce it's size
-// Fix medium difficulty and easy difficulty
 // modify the way restart works
 // initialise the variables only once, even if PvP
 // modify glade code and remove unecessary user_data thats being passed
@@ -16,6 +16,7 @@
 Uploaded to https://github.com/GokulVSD/tictactoe/ */
 
 // function prototyping
+int random(int n);
 void initialising(GtkButton *buttonInit,int i,int j);
 int hasAnyoneWon(int a[3][3]);
 void setAllButtonsToBlank();
@@ -781,9 +782,8 @@ checking whether Player 1 or Computer is about to win, and setting a higher scor
 to those buttons which either block the winning move or play the winning move. playing
 the winning move is scored higher than blocking Player 1's move. Lastly, scores are
 added to certain buttons to block Player 1 from reaching to the point where he/she
-is assured a garuanteed win. In easy mode, the 3rd highest scored button is played;
-In medium mode, the 2nd highest rank scored button is played; In hard move, the highest
-rank scored button is played. */
+is assured a garuanteed win. The move to be played is randomised based on the 
+difficulty. Higher the difficulty, higher the chance that the ideal move is played. */
 void computerMove()
 {
   int i,j,k,l,best=0,x,y;
@@ -870,39 +870,31 @@ void computerMove()
     }
   }
 
-  // finds the second highest scored button
-  if(gameDifficulty==1||gameDifficulty==0)
-  {
-    best=0;
-    score[x][y]=0;
-    for(i=0;i<3;i++)
+    // alters the highest scored move to be played if a random number matches criteria, lower chance
+    if(gameDifficulty==1)
     {
-      for(j=0;j<3;j++)
-      {
-        if(score[i][j]>best)
-        {
-          best=score[i][j]; x=i; y=j;
-        }
-      }
+        if(random(10)<4)
+	    {
+		    do
+		    {
+		    	x=random(3); y=random(3);
+		    }
+		    while(pressed[x][y]);
+	    }
     }
 
-    // finds the third highest scored button
+    // alters the highest scored move to be played if a random number matches criteria, higher chance
     if(gameDifficulty==0)
     {
-      best=0;
-      score[x][y]=0;
-      for(i=0;i<3;i++)
-      {
-        for(j=0;j<3;j++)
-        {
-          if(score[i][j]>best)
-          {
-            best=score[i][j]; x=i; y=j;
-          }
-        }
-      }
-    }
-  }
+		if(random(10)<7)
+		{
+			do
+			{
+				x=random(3); y=random(3);
+			}
+			while(pressed[x][y]);
+		}
+	}
 
   // plays the chosen button
   arr[x][y]=2;
@@ -933,4 +925,9 @@ void initialising(GtkButton *buttonInit,int i,int j)
       gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
       setAllButtonsToBlank();
     }
+}
+
+int random(int n) 
+{
+    return (double)rand()*n/RAND_MAX;
 }
