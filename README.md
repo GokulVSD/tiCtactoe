@@ -92,10 +92,9 @@ where in every button needs to be pressed to send its respective user data in or
 This was a very tedious process because I had to modify a lot of code.
 
 
-Created an AI based on a scoring system. If difficulty is hard,
-the highest scored move is played, if medium, second highest scored move is played, if easy,
-third highest scored move is played. The scoring system worked off of several criteria,
-and scores were adjusted for certain edge cases.
+Created an AI based on a scoring system. The move to be played is randomised based on the 
+difficulty. Higher the difficulty, higher the chance that the ideal move is played. 
+The scoring system worked off of several criteria, and scores were adjusted for certain edge cases.
 Implementing the PvC mode within the already created code took a lot of time and effort,
 and required me to fix a lot of bugs that arose with calling the computerMove() function after Player’s move.
 
