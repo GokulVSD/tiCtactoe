@@ -111,5 +111,5 @@ Note: You need to alter the required GTK Lib version in the mainUI.glade file (w
 3.12 before compiling on windows
 
 Warning! You need to quit the game only using the quit option in the settings menu on windows, if not, a ghost process
-is left behind. (This is because of the version mismatch of GTK on Windows and Linux.
+is left behind. (This is because of the version mismatch of GTK on Windows and Linux)
 
