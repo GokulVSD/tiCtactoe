@@ -12,7 +12,7 @@
     <property name="version">v1.0</property>
     <property name="website_label" translatable="yes">        Created using GTK+ 3.12 library and Glade
 Written and compiled in C using GCC 64 bit compiler
-	            Compiled in Ubuntu 16.4 LTS
+      Compiled in Ubuntu 16.4 LTS and Windows 10
 </property>
     <property name="authors">Gokul Vasudeva
 1st year BE, PESIT,
