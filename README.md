@@ -107,3 +107,6 @@ Command on windows with MSYS (Keep all required DLL's in the folder with the exe
 
 gcc main.c -o TicTacToe.exe `pkg-config --cflags --libs gtk+-3.0` -Wl,--export-all-symbols -mwindows
 
+Note: You need to alter the required GTK Lib version in the mainUI.glade file (with a text editor) to 3.0 instead of
+3.12 before compiling on windows
+
