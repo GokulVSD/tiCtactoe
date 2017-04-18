@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 // Remove the necessity to press the status button on restart
-// Add images for the menu items
 // Update readme files and reduce it's size
 // modify the way restart works
 // initialise the variables only once, even if PvP
@@ -16,14 +15,14 @@
 Uploaded to https://github.com/GokulVSD/tictactoe/ */
 
 // function prototyping
-int random(int n);
+int randomNumberLessThan(int n);
 void initialising(GtkButton *buttonInit,int i,int j);
 int hasAnyoneWon(int a[3][3]);
 void setAllButtonsToBlank();
 void computerMove();
 
 // declaring global variables
-static GtkButton *statusClick;
+static GtkButton *statusClick,*diffClick,*gameClick;
 static GtkButton *button[3][3]={{NULL,NULL,NULL},{NULL,NULL,NULL},{NULL,NULL,NULL}};
 
 // declaring global flags
@@ -32,7 +31,7 @@ static int moveCounter=0;
 
 // declaring game parameters
 static int arr[3][3]={{0,0,0},{0,0,0},{0,0,0}};
-static int gameType=0, gameDifficulty=0;
+static int gameType=0, gameDifficulty=1;
 
 // main method, start of execution
 int main(int argc, char *argv[])
@@ -63,12 +62,7 @@ int main(int argc, char *argv[])
 void on_gameExit_activate()
 {
     gtk_main_quit();
-}
-
-// called when main window is closed
-void on_window_main_destroy()
-{
-    gtk_main_quit();
+    exit(0);
 }
 
 // runs the about dialog box
@@ -92,47 +86,66 @@ void on_aboutSelection_activate()
 // when response signal is triggered
   gtk_widget_destroy (about);
 }
-// runs when PvP is selected in settings menu
-int on_pVp_activate()
-{
-  if(!statusFlag) return 0;
-  if(flag)
-  {
-    gtk_button_set_label(statusClick, "RESTART TO SELECT GAMEMODE");
-    return 0;
-  }
-  flag=1;
-  gtk_button_set_label(statusClick, "PLAYER 1'S MOVE");
-  gameType=0;
-  return 0;
-}
 
-// runs the choose difficulty pop up when PvC is selected in settings menu
-int on_pVc_activate()
+
+void on_chooseGamemodeButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
-  if(!statusFlag) return 0;
+  gameClick = (GtkButton *) user_data;
+  if(!statusFlag) return;
   if(flag)
   {
     gtk_button_set_label(statusClick, "RESTART TO SELECT GAMEMODE");
-    return 0;
+    return;
   }
-  gtk_button_set_label(statusClick, "SELECT DIFFICULTY");
-  initialise=1;
-  flag=1;
-  gameType = 1;
+  flag=1; //enable flag at button press, not here. reset flag to 0 in restart
+  gtk_button_set_label(statusClick, "SELECT GAMEMODE");
   GtkBuilder  *builder;
-  GtkWidget   *diffDialog;
+  GtkWidget   *gameDialog;
 // initialising GTKbuilder with .glade file
   builder = gtk_builder_new();
   gtk_builder_add_from_file (builder, "mainUI.glade", NULL);
-// initialising difficulty selection widget
-  diffDialog = GTK_WIDGET(gtk_builder_get_object(builder, "chooseDifficultyDialog"));
+// initialising gamemode selection widget
+  gameDialog = GTK_WIDGET(gtk_builder_get_object(builder, "chooseGamemodeDialog"));
   gtk_builder_connect_signals(builder, NULL);
   g_object_unref(builder);
-  gtk_dialog_run (GTK_DIALOG (diffDialog));
+  gtk_dialog_run (GTK_DIALOG (gameDialog));
 // when window is closed from the x button in toolbar
-  gtk_widget_destroy(diffDialog);
-  return 0;
+  gtk_widget_destroy(gameDialog);
+}
+
+// runs when PvP is selected in settings menu
+void on_pvpButton_clicked(GtkWidget *click_button, gpointer   user_data)
+{
+  gameType = 0;
+  gtk_widget_destroy((GtkWidget *) user_data);
+  gtk_button_set_label(gameClick, "PvP");
+}
+
+// runs the choose difficulty pop up when PvC is selected in settings menu
+void on_pvcButton_clicked(GtkWidget *click_button, gpointer   user_data)
+{
+  gameType = 1;
+  gtk_widget_destroy((GtkWidget *) user_data);
+  gtk_button_set_label(gameClick, "PvC");
+}
+
+
+void on_chooseDifficultyButton_clicked(GtkWidget *click_button, gpointer   user_data)
+{
+    diffClick = (GtkButton *) user_data;
+    gtk_button_set_label(statusClick, "SELECT DIFFICULTY");
+    GtkBuilder  *builder;
+    GtkWidget   *diffDialog;
+  // initialising GTKbuilder with .glade file
+    builder = gtk_builder_new();
+    gtk_builder_add_from_file (builder, "mainUI.glade", NULL);
+  // initialising difficulty selection widget
+    diffDialog = GTK_WIDGET(gtk_builder_get_object(builder, "chooseDifficultyDialog"));
+    gtk_builder_connect_signals(builder, NULL);
+    g_object_unref(builder);
+    gtk_dialog_run (GTK_DIALOG (diffDialog));
+  // when window is closed from the x button in toolbar
+    gtk_widget_destroy(diffDialog);
 }
 
 // runs when easy is selected in difficulty selection dialog
@@ -140,7 +153,7 @@ void on_easyButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   gameDifficulty = 0;
   gtk_widget_destroy((GtkWidget *) user_data);
-  gtk_button_set_label(statusClick, "PRESS ALL BUTTONS TO INITIALISE");
+  gtk_button_set_label(diffClick, "EASY");
 }
 
 // runs when medium is selected in difficulty selection dialog
@@ -148,7 +161,7 @@ void on_mediumButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   gameDifficulty = 1;
   gtk_widget_destroy((GtkWidget *) user_data);
-  gtk_button_set_label(statusClick, "PRESS ALL BUTTONS TO INITIALISE");
+  gtk_button_set_label(diffClick, "MEDIUM");
 }
 
 // runs when hard is selected in difficulty selection dialog
@@ -156,7 +169,7 @@ void on_hardButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   gameDifficulty = 2;
   gtk_widget_destroy((GtkWidget *) user_data);
-  gtk_button_set_label(statusClick, "PRESS ALL BUTTONS TO INITIALISE");
+  gtk_button_set_label(diffClick, "HARD");
 }
 
 /* runs when restart is selected in settings menu. Destroys old window,
@@ -663,12 +676,12 @@ int on_button33_clicked(GtkWidget *click_button, gpointer   user_data)
   GtkButton *buttonTemp = (GtkButton *) user_data;
 
   // runs if in initialising mode
-  if(initialise!=0) 
+  if(initialise!=0)
   {
       initialising(buttonTemp,2,2);
       return 0;
   }
-      
+
   // runs if button has already been pressed either while Initialising or in-game
   if(pressed[2][2]) return 0;
 
@@ -782,7 +795,7 @@ checking whether Player 1 or Computer is about to win, and setting a higher scor
 to those buttons which either block the winning move or play the winning move. playing
 the winning move is scored higher than blocking Player 1's move. Lastly, scores are
 added to certain buttons to block Player 1 from reaching to the point where he/she
-is assured a garuanteed win. The move to be played is randomised based on the 
+is assured a garuanteed win. The move to be played is randomised based on the
 difficulty. Higher the difficulty, higher the chance that the ideal move is played. */
 void computerMove()
 {
@@ -848,13 +861,13 @@ void computerMove()
   {
     if((arr[0][0]==1&&arr[2][2]==1)||(arr[0][2]==1&&arr[2][0]==1))
     score[1][0]=300;
-    if(arr[0][1]==1&&arr[1][0]==1)
+    if((arr[0][1]==1&&arr[1][0]==1)||(arr[1][0]==1&&arr[0][2]==1)||(arr[0][1]==1&&arr[2][0]==1))
     score[0][0]=300;
-    if(arr[0][1]==1&&arr[1][2]==1)
+    if((arr[0][1]==1&&arr[1][2]==1)||(arr[0][1]==1&&arr[2][2]==1)||(arr[1][2]==1&&arr[0][0]==1))
     score[0][2]=300;
-    if(arr[1][2]==1&&arr[2][1]==1)
+    if((arr[1][2]==1&&arr[2][1]==1)||(arr[1][2]==1&&arr[2][0]==1)||(arr[2][1]==1&&arr[0][2]==1))
     score[2][2]=300;
-    if(arr[2][1]==1&&arr[1][0]==1)
+    if((arr[2][1]==1&&arr[1][0]==1)||(arr[2][1]==1&&arr[0][0]==1)||(arr[1][0]==1&&arr[2][2]==1))
     score[2][0]=300;
   }
 
@@ -873,11 +886,11 @@ void computerMove()
     // alters the highest scored move to be played if a random number matches criteria, lower chance
     if(gameDifficulty==1)
     {
-        if(random(10)<4)
+        if(randomNumberLessThan(10)<4)
 	    {
 		    do
 		    {
-		    	x=random(3); y=random(3);
+		    	x=randomNumberLessThan(3); y=randomNumberLessThan(3);
 		    }
 		    while(pressed[x][y]);
 	    }
@@ -886,11 +899,11 @@ void computerMove()
     // alters the highest scored move to be played if a random number matches criteria, higher chance
     if(gameDifficulty==0)
     {
-		if(random(10)<7)
+		if(randomNumberLessThan(10)<7)
 		{
 			do
 			{
-				x=random(3); y=random(3);
+				x=randomNumberLessThan(3); y=randomNumberLessThan(3);
 			}
 			while(pressed[x][y]);
 		}
@@ -927,7 +940,7 @@ void initialising(GtkButton *buttonInit,int i,int j)
     }
 }
 
-int random(int n) 
+int randomNumberLessThan(int n)
 {
     return (double)rand()*n/RAND_MAX;
 }
