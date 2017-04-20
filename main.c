@@ -1,6 +1,7 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
+// Make window deletable, add int on_mainWindow_destroy()
 // Remove the necessity to press the status button on restart
 // Update readme files and reduce it's size
 // modify the way restart works
