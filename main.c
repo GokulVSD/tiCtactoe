@@ -1,18 +1,19 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
+// Slightly reduce the vertical height
 // Make window deletable, add int on_mainWindow_destroy()
 // Remove the necessity to press the status button on restart
 // Update readme files and reduce it's size
-// modify the way restart works
-// initialise the variables only once, even if PvP
-// modify glade code and remove unecessary user_data thats being passed
-// add octaves when buttons are clicked
-// modify text colors for stuff
-// modify the X and O's to be bigger fonts size
-// use more code inheritance when buttons are being pressed
+// Modify the way restart works
+// Initialise the variables only once, even if PvP
+// Modify glade code and remove unecessary user_data thats being passed
+// Add octaves when buttons are clicked
+// Modify text colors for stuff
+// Modify the X and O's to be bigger fonts size
+// Use more code inheritance when buttons are being pressed
 
-/* all code in master branch was written by Gokul Vasudeva
+/* All code in master branch was written by Gokul Vasudeva
 Uploaded to https://github.com/GokulVSD/tictactoe/ */
 
 // function prototyping
