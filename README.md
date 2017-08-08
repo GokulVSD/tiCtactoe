@@ -25,13 +25,24 @@ at least put in the effort to fix the small bugs before directly forking it, you
 of how the code was implimented.
 
 Screenshots:
-![ss credits](https://github.com/GokulVSD/tictactoe/res/credits.png)
-![ss about](https://github.com/GokulVSD/tictactoe/res/about.png)
-![ss ui](https://github.com/GokulVSD/tictactoe/res/ui.png)
-![ss pvp](https://github.com/GokulVSD/tictactoe/res/pvp.png)
-![ss diff](https://github.com/GokulVSD/tictactoe/res/diff.png)
-![ss gamemode](https://github.com/GokulVSD/tictactoe/res/gamemode.png)
-![ss winner](https://github.com/GokulVSD/tictactoe/res/winner.png)
+
+
+<a href="http://imgur.com/XgSHkeN"><img src="http://i.imgur.com/XgSHkeN.png" title="source: imgur.com" /></a>
+
+<a href="http://imgur.com/b1S2RAl"><img src="http://i.imgur.com/b1S2RAl.png" title="source: imgur.com" /></a>
+
+<a href="http://imgur.com/XgSHkeN"><img src="http://i.imgur.com/XgSHkeN.png" title="source: imgur.com" /></a>
+
+<a href="http://imgur.com/ig5jP4p"><img src="http://i.imgur.com/ig5jP4p.png" title="source: imgur.com" /></a>
+
+<a href="http://imgur.com/kAvbwH6"><img src="http://i.imgur.com/kAvbwH6.png" title="source: imgur.com" /></a>
+
+<a href="http://imgur.com/ukTvyRy"><img src="http://i.imgur.com/ukTvyRy.png" title="source: imgur.com" /></a>
+
+<a href="http://imgur.com/iYwzEYi"><img src="http://i.imgur.com/iYwzEYi.png" title="source: imgur.com" /></a>
+
+
+
 
 Command for compiling using GCC (GTK+ 3.0 Libraries must be installed first):
 
