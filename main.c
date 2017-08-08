@@ -1,10 +1,9 @@
 #include <gtk/gtk.h>
 #include <stdlib.h>
 
-// Slightly reduce the vertical height
+// To-Do:
 // Make window deletable, add int on_mainWindow_destroy()
 // Remove the necessity to press the status button on restart
-// Update readme files and reduce it's size
 // Modify the way restart works
 // Initialise the variables only once, even if PvP
 // Modify glade code and remove unecessary user_data thats being passed
@@ -89,7 +88,7 @@ void on_aboutSelection_activate()
   gtk_widget_destroy (about);
 }
 
-
+// when gamemode button is pressed
 void on_chooseGamemodeButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
   gameClick = (GtkButton *) user_data;
@@ -131,7 +130,7 @@ void on_pvcButton_clicked(GtkWidget *click_button, gpointer   user_data)
   gtk_button_set_label(gameClick, "PvC");
 }
 
-
+// when difficulty button is pressed
 void on_chooseDifficultyButton_clicked(GtkWidget *click_button, gpointer   user_data)
 {
     diffClick = (GtkButton *) user_data;
@@ -929,6 +928,7 @@ void computerMove()
   }
 }
 
+// runs for the first time each button is pressed
 void initialising(GtkButton *buttonInit,int i,int j)
 {
     if(button[i][j]!=NULL) return;
@@ -942,7 +942,9 @@ void initialising(GtkButton *buttonInit,int i,int j)
     }
 }
 
+// random number generator, in the range of 0 < x < n
 int randomNumberLessThan(int n)
 {
     return (double)rand()*n/RAND_MAX;
 }
+// end of program
