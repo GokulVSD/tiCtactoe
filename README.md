@@ -9,19 +9,19 @@
 *Finished: April 9th, 2017  (Took a a break for internal exams/assignments)*
 
 
-                            This was my first foray into GTK and creating an application in C.
-            I learnt GTK from the ground up, and I’d received rudimentary knowledge in C from my 1st Semester.
-        Due to the lack of documentation for the GTK library (in C, the Python library has pretty good documentation),
-           finishing the game took way longer than I anticipated. Most of my time was spent trying to cross compile
-        the game on windows. For future reference, I would not recommend creating a user interface in C, let alone GTK.
-         There are better ways to go about it. I encountered uncountable problems that required me to rewrite the vast
-         majority of code due to mismatchs in library versions. I don't even think they update the libraries for GTK on
-         windows anymore. For anyone looking to fork the code over, there's an issue with PvC (initialising of buttons)
-            as well as the restart functionality. It was working, but it broke after I redesigned the user interface.
-          Fixing it shouldn't be too much effort, I could do it myself, but realistically, no one's going to fork this,
-          unless they're desperate for a small game created in C with a GUI, for their college projects. In which case,
-              its very little effort to fix the small bugs before directly forking it. You'll at least get an idea
-                                             of how the code was implimented.
+                           This was my first foray into GTK and creating an application in C.
+           I learnt GTK from the ground up, and I’d received rudimentary knowledge in C from my 1st Semester.
+       Due to the lack of documentation for the GTK library (in C, the Python library has pretty good documentation),
+          finishing the game took way longer than I anticipated. Most of my time was spent trying to cross compile
+       the game on windows. For future reference, I would not recommend creating a user interface in C, let alone GTK.
+        There are better ways to go about it. I encountered uncountable problems that required me to rewrite the vast
+        majority of code due to mismatchs in library versions. I don't even think they update the libraries for GTK on
+        windows anymore. For anyone looking to fork the code over, there's an issue with PvC (initialising of buttons)
+           as well as the restart functionality. It was working, but it broke after I redesigned the user interface.
+         Fixing it shouldn't be too much effort, I could do it myself, but realistically, no one's going to fork this,
+         unless they're desperate for a small game created in C with a GUI, for their college projects. In which case,
+             its very little effort to fix the small bugs before directly forking it. You'll at least get an idea
+                                            of how the code was implimented.
 
 
 ##                                                       Screenshots:
