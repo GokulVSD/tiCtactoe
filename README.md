@@ -1,15 +1,18 @@
 
-#                                                       __Tic Tac Toe__
+<h1 align="center"> Tic Tac Toe </h1>
 
-##                       Written during my undergraduate course at PESIT, Bangalore South Campus.
-##                            The game was written for a presentation during my first year.
+<h4 align="center">Written during my undergraduate course at PESIT, Bangalore South Campus. <h4/>
+<h4 align="center">The game was written for a presentation during my first year.<h4/>
+
+##
 
 *Started: March 24th, 2017*
 
 *Finished: April 9th, 2017  (Took a a break for internal exams/assignments)*
 
+##
 
-                           This was my first foray into GTK and creating an application in C.
+<p align="center"> This was my first foray into GTK and creating an application in C.
            I learnt GTK from the ground up, and I’d received rudimentary knowledge in C from my 1st Semester.
        Due to the lack of documentation for the GTK library (in C, the Python library has pretty good documentation),
           finishing the game took way longer than I anticipated. Most of my time was spent trying to cross compile
@@ -21,7 +24,7 @@
          Fixing it shouldn't be too much effort, I could do it myself, but realistically, no one's going to fork this,
          unless they're desperate for a small game created in C with a GUI, for their college projects. In which case,
              its very little effort to fix the small bugs before directly forking it. You'll at least get an idea
-                                            of how the code was implimented.
+                                            of how the code was implimented. </p>
 
 
 ##                                                       Screenshots:
