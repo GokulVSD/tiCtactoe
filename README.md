@@ -21,10 +21,7 @@
         majority of code due to mismatchs in library versions. I don't even think they update the libraries for GTK on
         windows anymore. For anyone looking to fork the code over, there's an issue with PvC (initialising of buttons)
            as well as the restart functionality. It was working, but it broke after I redesigned the user interface.
-         Fixing it shouldn't be too much effort, I could do it myself, but realistically, no one's going to fork this,
-         unless they're desperate for a small game created in C with a GUI, for their college projects. In which case,
-             its very little effort to fix the small bugs before directly forking it. You'll at least get an idea
-                                            of how the code was implimented. </p>
+         Fixing it shouldn't be too much effort. </p>
 
 
 ##                                                       Screenshots:
@@ -34,7 +31,7 @@
 <p align="center">
 <a href="http://imgur.com/b1S2RAl"><img src="http://i.imgur.com/b1S2RAl.png" title="source: imgur.com" /></a></p>
 <p align="center">
-<a href="http://imgur.com/XgSHkeN"><img src="http://i.imgur.com/XgSHkeN.png" title="source: imgur.com" /></a></p>
+<a href="https://imgur.com/7aQnZhI"><img src="https://i.imgur.com/7aQnZhI.png" title="source: imgur.com" /></a></p>
 <p align="center">
 <a href="http://imgur.com/ig5jP4p"><img src="http://i.imgur.com/ig5jP4p.png" title="source: imgur.com" /></a></p>
 <p align="center">
