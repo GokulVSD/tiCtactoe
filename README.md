@@ -1,7 +1,7 @@
 
 <h1 align="center"> Tic Tac Toe </h1>
 
-<h4 align="center">Written during my undergraduate course at PESIT, Bangalore South Campus. <h4/>
+<h4 align="center">Written during my undergraduate course at PES University, Bangalore South Campus. <h4/>
 <h4 align="center">The game was written for a presentation during my first year.<h4/>
 
 ##
