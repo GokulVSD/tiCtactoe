@@ -1,5 +1,5 @@
 
-<h1 align="center"> Tic Tac Toe </h1>
+<h1 align="center"> tiCtactoe </h1>
 
 <h4 align="center">Written during my undergraduate course at PES University, Bangalore South Campus. <h4/>
 <h4 align="center">The game was written for a presentation during my first year.<h4/>
@@ -46,11 +46,11 @@
 
 ## Command for compiling using GCC (GTK+ 3.0 Libraries must be installed first):
 ```
-gcc -o TicTacToe main.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic
+gcc -o tiCtactoe main.c -Wall `pkg-config --cflags --libs gtk+-3.0` -export-dynamic
 ```
 ## Command on windows with MSYS (Keep all required DLL's in the folder with the executable):
 ```
-gcc main.c -o TicTacToe.exe `pkg-config --cflags --libs gtk+-3.0` -Wl,--export-all-symbols -mwindows
+gcc main.c -o tiCtactoe.exe `pkg-config --cflags --libs gtk+-3.0` -Wl,--export-all-symbols -mwindows
 ```
 *Warning! You need to quit the game only using the quit button on windows, if not, a ghost process*
 *is left behind. (This is because of the version mismatch of GTK on Windows and Linux)*
